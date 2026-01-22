@@ -30,7 +30,7 @@ export default async function Home() {
           <p className="text-gray-600 mb-8">
             Submit creative excuses for late assignments and vote on your favorites!
           </p>
-          <ExcuseForm onExcuseSubmitted={() => {}} />
+          <ExcuseForm />
         </div>
         <div className="bg-white rounded-lg shadow-md p-8">
           <ExcuseList initialExcuses={excuses.map(excuse => ({

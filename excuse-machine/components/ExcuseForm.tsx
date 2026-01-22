@@ -2,11 +2,7 @@
 
 import { useState } from 'react'
 
-interface ExcuseFormProps {
-  onExcuseSubmitted: () => void
-}
-
-export default function ExcuseForm({ onExcuseSubmitted }: ExcuseFormProps) {
+export default function ExcuseForm() {
   const [excuseText, setExcuseText] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -37,7 +33,6 @@ export default function ExcuseForm({ onExcuseSubmitted }: ExcuseFormProps) {
       }
 
       setExcuseText('')
-      onExcuseSubmitted()
       // Reload page to show new excuse
       window.location.reload()
     } catch (err) {
