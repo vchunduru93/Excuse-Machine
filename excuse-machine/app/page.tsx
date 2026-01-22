@@ -2,6 +2,10 @@ import { prisma } from '@/lib/prisma'
 import ExcuseForm from '@/components/ExcuseForm'
 import ExcuseList from '@/components/ExcuseList'
 
+// Disable caching for this page to always show fresh data
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 async function getExcuses() {
   try {
     const excuses = await prisma.excuse.findMany({
